@@ -38,10 +38,14 @@
                                    required="required" placeholder="Email subject">
                         @error('subject') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
+
                     <div class="form-group">
-                        Text <input type="radio" name="type"> HTML <input type="radio" name="type">
+                        <label for="">Type</label>
+                        <input type="radio" name="type" value="text">Text
+                        <input type="radio" name="type" value="html" required="required">Html
                         @error('type') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
+
                     <div class="form-group">
                         <label for="">Message</label>
                             <textarea name="message" cols="50" rows="4" class="form-control" required="required"

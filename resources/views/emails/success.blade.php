@@ -19,6 +19,8 @@
         <th scope="col">Email From</th>
         <th scope="col">Email To</th>
         <th scope="col">Email CC</th>
+        <th scope="col">Type</th>
+        <th scope="col">Message</th>
     </tr>
     </thead>
     @foreach($mails as $mail)
@@ -26,6 +28,10 @@
             <td>{{$mail['email_from']}}</td>
             <td>{{$mail['email_to']}}</td>
             <td>{{$mail['email_cc']}}</td>
+            <td>{{$requestData['type']}}</td>
+            <td>
+            <iframe style="width:50%;height:100px;" srcdoc="{{$requestData['message']}}">></iframe>
+            </td>
         </tr>
     @endforeach
 </table>

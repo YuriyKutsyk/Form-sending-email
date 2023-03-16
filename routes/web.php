@@ -14,10 +14,5 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('send-email', [MailController::class, 'index']);
-Route::post('success', [MailController::class, 'success'])->name('email.success');
-Route::get('success', [MailController::class, 'show'])->name('success.show');
+Route::get('/', [MailController::class, 'index']);
+Route::post('success/{UUID}', [MailController::class, 'success'])->name('email.success');

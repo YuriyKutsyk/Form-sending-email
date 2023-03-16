@@ -3,7 +3,6 @@
 namespace App\Repositories\MailRepository;
 
 use App\Models\Mail;
-use App\Repositories\Base\BaseRepository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -19,19 +18,21 @@ class MailRepository
         return $this->query()->create($attributes);
     }
 
-    public function getLastUUID(): Mail
-    {
-        return $this
-            ->query()
-            ->select('UUID')
-            ->orderByDesc('UUID')
-            ->first();
-    }
+//    public function getLastUUID(string $emailFrom): Mail
+//    {
+//        return $this
+//            ->query()
+//            ->select('UUID')
+//            ->where('email_from', $emailFrom)
+//            ->orderByDesc('created_at')
+//            ->first();
+//    }
 
-    public function getLastEmailSent(): Collection
+    public function getLastDataByFieldEmailFrom(string $emailFrom): Collection
     {
         return $this
             ->query()
+            ->where('email_from', $emailFrom)
             ->orderByDesc('created_at')
             ->limit(1)
             ->get();
