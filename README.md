@@ -4,7 +4,7 @@
 * MySQL 8.0+
 
 ## 1. Clone the git repository:
-//
+https://github.com/YuriyKutsyk/Form-sending-email.git
 
 Switch to the project directory:
 ```

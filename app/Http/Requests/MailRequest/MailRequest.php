@@ -18,6 +18,7 @@ class MailRequest extends FormRequest
             'email_to'      => 'required|email',
             'email_cc'      => 'nullable|email',
             'subject'       => 'required|string',
+            'type'          => 'required|string',
             'message'       => 'required|string'
         ];
     }
