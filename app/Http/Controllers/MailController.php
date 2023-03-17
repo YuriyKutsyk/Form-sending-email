@@ -60,9 +60,9 @@ class MailController extends Controller
             $mail->Body = $mailRequest->message;
 
             if ($mail->send()) {
-                $lastEmailSent = $this->mailRepository->getLastDataByFieldEmailFrom($mailRequest['email_from']);
+//                $lastEmailSent = $this->mailRepository->getLastDataByFieldEmailFrom($mailRequest['email_from']);
 //                $uuid = $this->mailRepository->getLastUUID($mailRequest['email_from']);
-                return view('emails.success', ['mails' => $lastEmailSent], ['requestData' => $mailRequest->all()]);
+                return view('emails.success', ['mails' => [$mailRequest->all()]]);
             }
             return back()->withInput()->withErrors($mail->ErrorInfo);
         } catch (Exception $e) {

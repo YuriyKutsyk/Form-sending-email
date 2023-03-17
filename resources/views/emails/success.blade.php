@@ -28,9 +28,9 @@
             <td>{{$mail['email_from']}}</td>
             <td>{{$mail['email_to']}}</td>
             <td>{{$mail['email_cc']}}</td>
-            <td>{{$requestData['type']}}</td>
+            <td>{{$mail['type']}}</td>
             <td>
-            <iframe style="width:50%;height:100px;" srcdoc="{{$requestData['message']}}">></iframe>
+            <iframe style="width:50%;height:100px;" srcdoc="{{$mail['message']}}">></iframe>
             </td>
         </tr>
     @endforeach

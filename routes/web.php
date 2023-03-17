@@ -15,4 +15,5 @@ use App\Http\Controllers\MailController;
 */
 
 Route::get('/', [MailController::class, 'index']);
-Route::post('success/{UUID}', [MailController::class, 'success'])->name('email.success');
+Route::post('success', [MailController::class, 'success'])->name('email.success');
+

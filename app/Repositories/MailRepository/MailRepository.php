@@ -28,13 +28,13 @@ class MailRepository
 //            ->first();
 //    }
 
-    public function getLastDataByFieldEmailFrom(string $emailFrom): Collection
-    {
-        return $this
-            ->query()
-            ->where('email_from', $emailFrom)
-            ->orderByDesc('created_at')
-            ->limit(1)
-            ->get();
-    }
+//    public function getLastDataByFieldEmailFrom(string $emailFrom): Collection
+//    {
+//        return $this
+//            ->query()
+//            ->where('email_from', $emailFrom)
+//            ->orderByDesc('created_at')
+//            ->limit(1)
+//            ->get();
+//    }
 }
